@@ -1,6 +1,11 @@
-$primarycolor: grey;
-$secondcolor: black;
-$thirdcolor: blue;
+$primarycolor: black;
+$secondcolor: grey;
+$thirdcolor: #324360;
+$fourthcolor: #35c4ce;
+$primaryfont: Quando;
+$secondfont: "JOsefin Sans", sans-serif;
+$weight1: 400;
+$weight2: 900;
 
 @mixin hover-text($color) {
     &:hover {
@@ -8,11 +13,161 @@ $thirdcolor: blue;
     }
 }
 
+@mixin transition($property, $time, $animationtype) {
+    transition: $property, $time, $animationtype;
+}
+
+
+body {
+    font-family: $primaryfont;
+    font-size: 15px;
+    color: $primarycolor;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    margin-bottom: 25px;
+    line-height: 1.6em;
+}
+
 a {
-    font-weight: 400;
+    font-weight: $weight1;
     text-decoration: none;
-    color: #111111;
-    transition: .20s;
+    color: $primarycolor;
+    transition: 0.20s;
 
     @include hover-text($secondcolor);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-family: "$secondfont";
+    font-weight: $weight1;
+    line-height: 1.3em;
+    word-wrap: break-word;
+    color: $primarycolor;
+}
+
+h1 {
+    font-size: 37px;
+}
+
+h2 {
+    font-size: 31px;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+h4 {
+    font-size: 21px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 15px;
+}
+
+.container {
+    width: 94%;
+    margin: 0 auto;
+}
+
+/* header and main nav */
+header {
+    font-family: $secondfont;
+}
+
+header nav ul {
+    display: none;
+}
+
+.top-logo {
+    width: 200px;
+    margin: 20px auto 40px;
+}
+
+/* posts */
+article {
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-part {
+    margin-bottom: 10px;
+}
+
+.post-title {
+    margin-top: 0;
+}
+
+.post-title a {
+    color: $thirdcolor;
+    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: $weight2;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 1.3em;
+    transition: all, 0.3s, ease;
+
+    @include hover-text($fourthcolor);
+}
+
+/* footer */
+footer {
+    padding: 30px 0;
+    text-align: center;
+    background: white;
+    color: $secondcolor;
+}
+
+#footer a {
+    color: $secondcolor;
+
+    @include hover-text($primarycolor);
+}
+
+.footer-logo {
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.footer-social-links {
+    padding: 20px 0;
+    line-height: 2em;
+}
+
+.footer-social-links a {
+    margin: 0 10px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.footer-social-links a span {
+    display: none;
+}
+
+#footer-copyright {
+    padding: 20px 0;
+    font-size: 12px;
+    color: $secondcolor;
 }
