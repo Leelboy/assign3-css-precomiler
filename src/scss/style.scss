@@ -1,0 +1,18 @@
+$primarycolor: grey;
+$secondcolor: black;
+$thirdcolor: blue;
+
+@mixin hover-text($color) {
+    &:hover {
+        color: $color;
+    }
+}
+
+a {
+    font-weight: 400;
+    text-decoration: none;
+    color: #111111;
+    transition: .20s;
+
+    @include hover-text($secondcolor);
+}

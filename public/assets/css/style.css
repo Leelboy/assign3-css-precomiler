@@ -1,0 +1,11 @@
+a {
+  font-weight: 400;
+  text-decoration: none;
+  color: #111111;
+  transition: 0.2s;
+}
+a:hover {
+  color: black;
+}
+
+/*# sourceMappingURL=style.css.map */
